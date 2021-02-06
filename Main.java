@@ -66,7 +66,6 @@ public class Main {
         int c = 0;
         while (s != null) {
             if(c == 0) {
-                System.out.println("emps");
                 String[]  empstmp = s.split(": ");
                 emps = Integer.parseInt(empstmp[1]);
             }
@@ -78,16 +77,12 @@ public class Main {
             s = br.readLine();
             c++;
         }
-        System.out.println(emps);
-        
         smap.putAll(data);
-        
+
         int minDiff = 229900;
-        int range = emps -1;
-        int arrlen = smap.size() - range;
+        int arrlen = smap.size() - emps -1;
         int item1 = 0, item2 = 0;
         for (int i = 0; i < arrlen; i++) {
-            
             int x = (new Vector<Integer>(smap.values()).get(i));
             int y = (new Vector<Integer>(smap.values()).get(emps - 1));
             int v = Math.abs(x-y);
